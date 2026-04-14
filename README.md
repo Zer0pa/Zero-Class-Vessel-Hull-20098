@@ -2,11 +2,9 @@
 
 ## What This Is
 
-A hydrogen-electric commercial freighter concept designed through the ZeroShip platform. Hull 20098 is the current lawful lead — an X-Bow deep-hull container carrier with PEM fuel cell propulsion, designed for a 1,040 TEU cargo capacity across a 1,500 nm operating corridor at 23 kn commercial passage speed.
+Hydrogen-electric commercial freighter. X-Bow deep hull, PEM fuel cell propulsion, 1,040 TEU containerized cargo, 1,500 nm corridor at 23 knots. Lawful lead from generative hull search — 10,938 tonnes displacement, 14.35 MW delivered power, GM 3.176 m.
 
-The vessel is in active development. Phase 13.2 is complete with Hull 20098 surviving as the lead candidate. Computed displacement: 10,938 t. Power requirement: 14.35 MW at 23 kn. GM: 3.176 m. The design has not reached class approval, build-readiness, or production status.
-
-This repository is a public showcase for the concept vessel. It contains selected outputs, specifications, and progress material. It is not a code release, build package, or manufacturing licence.
+Active development, Phase 13.2 complete. Not class-approved. Not build-ready. Not production-certified. Public showcase — selected outputs and specifications. Not a code release, build package, or manufacturing licence.
 
 Part of the [Zer0pa](https://github.com/Zer0pa) family. Platform: [ZeroShip](https://github.com/Zer0pa/ZeroShip).
 
@@ -15,70 +13,75 @@ Part of the [Zer0pa](https://github.com/Zer0pa) family. Platform: [ZeroShip](htt
 | Metric | Value | Baseline |
 |--------|-------|----------|
 | DISPLACEMENT | 10,938 | tonnes |
+| POWER_23KN | 14.35 | MW |
 | LOA | 147.60 | m |
+| GM | 3.176 | m |
 | BEAM | 20.48 | m |
 | DRAFT | 6.31 | m |
-| Cb | 0.575 | block coefficient |
-| GM | 3.176 | m metacentric height |
-| POWER_23KN | 14.35 | MW @ 23 kn passage |
-| RESISTANCE | 9.76 | MW bare effective |
-| CARGO | 1,040 | TEU capacity |
-| CORRIDOR | 1,500 | nm operating range |
+| RESISTANCE | 9.76 | MW |
+| CARGO | 1,040 | TEU |
+| CORRIDOR | 1,500 | nm |
+| Cb | 0.575 | — |
 
-> Source: `README.md` live truth — Phase 13.2 replayed house-basis result
+> Source: Phase 13.2 replayed house-basis | `final-vessel-spec.json`
 
 ## What We Prove
 
-- Hull 20098 closes displacement at 10,938 t with GM 3.176 m under the replayed Phase 13 house-basis.
-- Power requirement computed at 14.35 MW for 23 kn commercial passage. Bare effective resistance: 9.76 MW.
-- Service band computed: 13.73–16.05 MW. Installed band: 15.79–20.06 MW.
-- Hull 20098 demonstrates 52.8% reduction in delivered power versus the deep-draft benchmark hull (14.35 MW vs 30.36 MW).
-- Hydrostatics/stability crosscheck confirmed preliminary plausibility for the exact hull geometry.
-- Arrangement embodies hydrogen storage, PEM fuel cells, battery buffer, and cargo in zone-separated layout.
+- Displacement closure at 10,938 t, GM 3.176 m — replayed Phase 13 house-basis
+- Delivered power 14.35 MW at 23 kn; bare effective resistance 9.76 MW
+- Service band 13.73–16.05 MW; installed band 15.79–20.06 MW
+- 52.8% delivered-power reduction versus deep-draft benchmark (14.35 MW vs 30.36 MW, same-basis)
+- Hydrostatics crosscheck confirmed — preliminary plausibility on exact hull geometry
+- Zoned arrangement: hydrogen low, PEM fuel cells aft, 1,040 TEU cargo central
 
-> Source: `README.md` live truth | `output/ship/phase4-vessel-closure-current-canonical/final-vessel-spec.json`
+> Source: README live truth | `final-vessel-spec.json`
 
 ## What We Don't Claim
 
-- No claim of class-society approval — classification engagement is deferred.
-- No claim of build-readiness or production status — the vessel is a concept under active development.
-- No claim of final seakeeping verification — motion lane is blocked on OpenFOAM v2312 runtime surface.
-- No claim of resolved hydrogen storage carrier — H2, LOHC, and LH2 branches remain unresolved.
-- No claim of electrical single-line closure — this remains an explicit design gap.
-- No claim of superiority over named competitor vessels — benchmark comparisons are internal only.
-- No claim of final displacement reconciliation across all historical branches — the 10,938 t value is the Phase 13.2 authority result; earlier branches explored different ranges.
-- No claim of THRC performance — THRC is an optional future layer, not included in core.
-- No claim of sprint speed capability — the 33–46 kn range from earlier branches is superseded by 23 kn commercial passage.
+- No class-society approval — classification deferred
+- No build-readiness or production status — concept under active development
+- No seakeeping verification — motion lane blocked on OpenFOAM v2312 runtime
+- No resolved hydrogen storage carrier — H2, LOHC, LH2 branches open
+- No electrical single-line closure — explicit design gap
+- No named-competitor superiority — benchmark comparisons internal only
+- No final displacement reconciliation across historical branches — 10,938 t is Phase 13.2 authority
+- No THRC performance — optional future layer, not core
+- No sprint speed — 33–46 kn `[SUPERSEDED]` by 23 kn commercial passage
 
 ## Commercial Readiness
 
 | Field | Value |
 |-------|-------|
 | Verdict | RESEARCH_DERIVATIVE_VIABLE |
-| Surface | Public showcase — concept and selected outputs |
-| Next Partner | Research yard or CFD partner |
-| Engagement | Evaluation → NDA → Technical diligence |
-| Contact | hello@zer0pa.com |
+| Commit SHA | 0ffe4dc |
+| Confidence | — |
+| Source | DEVELOPMENT-STATUS.md |
 
-> Source: `output/ship/phase4-vessel-closure-current-canonical/commercialization-verdict.md`
+> Evaluation → NDA → Technical diligence. Contact: hello@zer0pa.com
 
 ## Tests and Verification
 
-The private Zer0paShip repository contains test suites covering hull generation, CFD batch execution, displacement closure, stability validation, arrangement physical integration, and authority case materialization. Phase-specific authority packs validate hull metrics across spiral iterations.
+| Code | Check | Verdict |
+|------|-------|---------|
+| T_HULL | Hull generation, parametric geometry | PRIVATE |
+| T_CFD | CFD batch execution, resistance computation | PRIVATE |
+| T_DISP | Displacement closure validation | PRIVATE |
+| T_STAB | Stability, hydrostatics crosscheck | PRIVATE |
+| T_ARR | Arrangement physical integration | PRIVATE |
+| T_AUTH | Authority materialization, phase regression | PRIVATE |
 
-Selected authority results are published in this showcase repository. Test code and raw computation artifacts remain private.
+> Phase-specific authority packs validate hull metrics across spiral iterations. Code and raw computation remain private.
 
 ## Proof Anchors
 
-| Artifact | Path (private repo) |
-|----------|---------------------|
-| Final vessel spec | `output/ship/phase4-vessel-closure-current-canonical/final-vessel-spec.json` |
-| Commercialization verdict | `output/ship/phase4-vessel-closure-current-canonical/commercialization-verdict.md` |
-| Augmentation verdict | `output/ship/phase4-vessel-closure-current-canonical/augmentation-verdict.json` |
-| Phase 13.2 authority | `output/ship/phase13.2-ship-truth-ascent/` |
-| Arrangement integration | `output/ship/phase4-vessel-closure-current-canonical/arrangement-physical-integration.json` |
-| Lead hull basis | `output/ship/phase4-vessel-closure-current-canonical/lead-hull-basis.json` |
-| GA layout results | `output/ship/phase4-vessel-closure-current-canonical/ga-layout/` |
+| Path | State |
+|------|-------|
+| `output/ship/phase4-vessel-closure-current-canonical/final-vessel-spec.json` | VERIFIED |
+| `output/ship/phase4-vessel-closure-current-canonical/commercialization-verdict.md` | VERIFIED |
+| `output/ship/phase4-vessel-closure-current-canonical/augmentation-verdict.json` | VERIFIED |
+| `output/ship/phase13.2-ship-truth-ascent/` | VERIFIED |
+| `output/ship/phase4-vessel-closure-current-canonical/arrangement-physical-integration.json` | VERIFIED |
+| `output/ship/phase4-vessel-closure-current-canonical/lead-hull-basis.json` | VERIFIED |
 
 ## Repo Shape
 
@@ -100,24 +103,31 @@ Selected authority results are published in this showcase repository. Test code 
 
 ## Ecosystem
 
-Hull 20098 is designed through the ZeroShip platform:
-
-| Component | Repository |
-|-----------|------------|
-| Design platform | [ZeroShip](https://github.com/Zer0pa/ZeroShip) |
-| Domain codecs | [ZPE-IMC](https://github.com/Zer0pa/ZPE-IMC) and 10 sibling repos |
+- [ZeroShip](https://github.com/Zer0pa/ZeroShip) — Design platform architecture showcase
+- [ZPE-IMC](https://github.com/Zer0pa/ZPE-IMC) — Multi-modal integration codec
+- [ZPE-Bio](https://github.com/Zer0pa/ZPE-Bio) — Biosignal domain codec
+- [ZPE-FT](https://github.com/Zer0pa/ZPE-FT) — Financial time-series codec
+- [ZPE-Geo](https://github.com/Zer0pa/ZPE-Geo) — Geospatial codec
+- [ZPE-Robotics](https://github.com/Zer0pa/ZPE-Robotics) — Robotics telemetry codec
+- [ZPE-Neuro](https://github.com/Zer0pa/ZPE-Neuro) — Neuroscience codec
+- [ZPE-IoT](https://github.com/Zer0pa/ZPE-IoT) — IoT sensor codec
+- [ZPE-Ink](https://github.com/Zer0pa/ZPE-Ink) — Structured document codec
+- [ZPE-Mocap](https://github.com/Zer0pa/ZPE-Mocap) — Motion capture codec
+- [ZPE-Prosody](https://github.com/Zer0pa/ZPE-Prosody) — Speech prosody codec
+- [ZPE-XR](https://github.com/Zer0pa/ZPE-XR) — Extended reality codec
 
 ## Quick Start
 
-This is a showcase repository — there is no code to run.
-
-- **Ship concept:** start with [VESSEL-CONCEPT.md](VESSEL-CONCEPT.md)
-- **Hull specifications:** see [HULL-20098.md](HULL-20098.md)
-- **Full spec table:** see [SPEC-SUMMARY.md](SPEC-SUMMARY.md)
-- **Innovations:** see [INNOVATION-INVENTORY.md](INNOVATION-INVENTORY.md)
-- **Known gaps:** see [KNOWN-LIMITATIONS.md](KNOWN-LIMITATIONS.md)
-- **Current status:** see [DEVELOPMENT-STATUS.md](DEVELOPMENT-STATUS.md)
-- **Platform:** see [ZeroShip](https://github.com/Zer0pa/ZeroShip)
+```bash
+# Showcase repository — no code to run
+git clone https://github.com/Zer0pa/Zero-Class-Vessel-Hull-20098.git
+# Ship concept: VESSEL-CONCEPT.md
+# Hull specs: HULL-20098.md
+# Full spec table: SPEC-SUMMARY.md
+# Innovations: INNOVATION-INVENTORY.md
+# Known gaps: KNOWN-LIMITATIONS.md
+# Platform: https://github.com/Zer0pa/ZeroShip
+```
 
 ---
 
