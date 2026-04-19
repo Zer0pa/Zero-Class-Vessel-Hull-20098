@@ -47,7 +47,7 @@ sibling ZeroShip repo.
 | Field | Value |
 |-------|-------|
 | Verdict | PARTIAL |
-| Commit SHA | 09d07ba |
+| Commit SHA | f612d5d13fb7 |
 | Confidence | 79% |
 | Source | proofs/manifests/CURRENT_AUTHORITY_PACKET.md |
 
