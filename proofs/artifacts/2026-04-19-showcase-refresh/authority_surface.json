@@ -1,0 +1,17 @@
+{
+  "repo": "Zero-Class-Vessel-Hull-20098",
+  "updated": "2026-04-19",
+  "public_position": "ship_truth_frozen_platform_convergence_active",
+  "authority_basis": {
+    "power_23kn_mw": 14.359960,
+    "hydrodynamic_anchor_mw": 14.350634,
+    "loaded_displacement_t": 10955.255,
+    "one_unit_out_support_kn": 19.595771
+  },
+  "branch_boundaries": {
+    "four_pod_same_basis_mw": 13.518964,
+    "four_pod_state": "branch_local_non_sovereign",
+    "geometry_reopen": "blocked"
+  },
+  "next_lawful_move": "finish platform convergence and authorize one bounded authority relaunch"
+}

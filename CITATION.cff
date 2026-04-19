@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+title: Zero Class Vessel Hull 20098
+message: Please cite this public showcase surface using the metadata below.
+type: dataset
+authors:
+  - family-names: Pillay
+    given-names: Priniven
+repository-code: https://github.com/Zer0pa/Zero-Class-Vessel-Hull-20098
+license: LicenseRef-Zer0pa-SAL-6.2
+abstract: Public authority and status surface for the Hull 20098 vessel concept.

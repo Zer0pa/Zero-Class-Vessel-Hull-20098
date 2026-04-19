@@ -1,0 +1,45 @@
+name: Public Surface Checks
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate README contract and proof anchors
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          root = Path(".")
+          readme = root / "README.md"
+          text = readme.read_text()
+          headings = [line.strip() for line in text.splitlines() if line.startswith("## ")]
+          required = [
+              "## What This Is",
+              "## Key Metrics",
+              "## What We Prove",
+              "## What We Don't Claim",
+              "## Commercial Readiness",
+              "## Tests and Verification",
+              "## Proof Anchors",
+              "## Repo Shape",
+              "## Quick Start",
+          ]
+          idx = 0
+          for item in required:
+              idx = headings.index(item, idx) + 1
+          status = json.loads((root / "validation/results/public_surface_status.json").read_text())
+          assert status["checks"], "missing public validation checks"
+          for rel in [
+              "proofs/manifests/CURRENT_AUTHORITY_PACKET.md",
+              "proofs/artifacts/2026-04-19-showcase-refresh/authority_surface.json",
+              "proofs/artifacts/2026-04-19-showcase-refresh/open_gaps.md",
+              "validation/results/public_surface_status.json",
+          ]:
+              assert (root / rel).exists(), f"missing proof anchor: {rel}"
+          assert "/Users/" not in text, "private filesystem path leaked into README"
+          PY

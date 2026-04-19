@@ -1,134 +1,89 @@
-# Zero Class Vessel — Hull 20098
+# Zero Class Vessel Hull 20098
 
 ## What This Is
 
-Hydrogen-electric commercial freighter. X-Bow deep hull, PEM fuel cell propulsion, 1,040 TEU containerized cargo, 1,500 nm corridor at 23 knots. Lawful lead from generative hull search — 10,938 tonnes displacement, 14.35 MW delivered power, GM 3.176 m.
+This repo is the public authority and status surface for the concept vessel
+currently tracked as Hull 20098. It publishes the current vessel basis, open
+closure gaps, and weekly state changes without publishing private code, CAD,
+raw CFD estates, or partner data.
 
-Active development, Phase 13.2 complete. Not class-approved. Not build-ready. Not production-certified. Public showcase — selected outputs and specifications. Not a code release, build package, or manufacturing licence.
+This surface is useful now for following whether the ship truth moved, stayed
+frozen, or remained blocked. Platform progress is published separately in the
+sibling ZeroShip repo.
 
-Part of the [Zer0pa](https://github.com/Zer0pa) family. Platform: [ZeroShip](https://github.com/Zer0pa/ZeroShip).
+| Field | Value |
+|-------|-------|
+| Architecture | VESSEL_AUTHORITY_STREAM |
+| Encoding | HULL_20098_PUBLIC_PACKET_V1 |
 
 ## Key Metrics
 
 | Metric | Value | Baseline |
 |--------|-------|----------|
-| DISPLACEMENT | 10,938 | tonnes |
-| POWER_23KN | 14.35 | MW |
-| LOA | 147.60 | m |
-| GM | 3.176 | m |
-| BEAM | 20.48 | m |
-| DRAFT | 6.31 | m |
-| RESISTANCE | 9.76 | MW |
-| CARGO | 1,040 | TEU |
-| CORRIDOR | 1,500 | nm |
-| Cb | 0.575 | — |
+| POWER_23KN | 14.36 MW | 23 kn |
+| DISPLACEMENT | 10,955 t | loaded |
+| ONE_UNIT_OUT | 19.60 kn | support |
+| LOA | 147.60 m | hull |
 
-> Source: Phase 13.2 replayed house-basis | `final-vessel-spec.json`
+> Source: `proofs/artifacts/2026-04-19-showcase-refresh/authority_surface.json`
 
 ## What We Prove
 
-- Displacement closure at 10,938 t, GM 3.176 m — replayed Phase 13 house-basis
-- Delivered power 14.35 MW at 23 kn; bare effective resistance 9.76 MW
-- Service band 13.73–16.05 MW; installed band 15.79–20.06 MW
-- 52.8% delivered-power reduction versus deep-draft benchmark (14.35 MW vs 30.36 MW, same-basis)
-- Hydrostatics crosscheck confirmed — preliminary plausibility on exact hull geometry
-- Zoned arrangement: hydrogen low, PEM fuel cells aft, 1,040 TEU cargo central
-
-> Source: README live truth | `final-vessel-spec.json`
+- the current executable two-unit baseline remains `14.359960 MW @ 23 kn`
+- the admitted hydrodynamic anchor remains `14.350634 MW @ 23 kn`
+- one-unit-out `23 kn` remains false on the current basis
+- the four-pod `13.518964 MW @ 23 kn` row remains branch-local and non-sovereign
 
 ## What We Don't Claim
 
-- No class-society approval — classification deferred
-- No build-readiness or production status — concept under active development
-- No seakeeping verification — motion lane blocked on OpenFOAM v2312 runtime
-- No resolved hydrogen storage carrier — H2, LOHC, LH2 branches open
-- No electrical single-line closure — explicit design gap
-- No named-competitor superiority — benchmark comparisons internal only
-- No final displacement reconciliation across historical branches — 10,938 t is Phase 13.2 authority
-- No THRC performance — optional future layer, not core
-- No sprint speed — 33–46 kn `[SUPERSEDED]` by 23 kn commercial passage
+- no class approval, yard package, or manufacturing release
+- no lawful one-unit-out `23 kn` commercial claim
+- no topology or package closure for the open authority gate
+- no public CAD, raw CFD estate, or private implementation code
+- no Phase 14 closure while the current ship gate remains open
 
 ## Commercial Readiness
 
 | Field | Value |
 |-------|-------|
-| Verdict | RESEARCH_DERIVATIVE_VIABLE |
-| Commit SHA | 0ffe4dc |
-| Confidence | — |
-| Source | DEVELOPMENT-STATUS.md |
-
-> Evaluation → NDA → Technical diligence. Contact: hello@zer0pa.com
+| Verdict | PARTIAL |
+| Commit SHA | 09d07ba |
+| Confidence | 79% |
+| Source | proofs/manifests/CURRENT_AUTHORITY_PACKET.md |
 
 ## Tests and Verification
 
 | Code | Check | Verdict |
 |------|-------|---------|
-| T_HULL | Hull generation, parametric geometry | PRIVATE |
-| T_CFD | CFD batch execution, resistance computation | PRIVATE |
-| T_DISP | Displacement closure validation | PRIVATE |
-| T_STAB | Stability, hydrostatics crosscheck | PRIVATE |
-| T_ARR | Arrangement physical integration | PRIVATE |
-| T_AUTH | Authority materialization, phase regression | PRIVATE |
-
-> Phase-specific authority packs validate hull metrics across spiral iterations. Code and raw computation remain private.
+| V_01 | README contract matches the showcase playbook | PASS |
+| V_02 | Proof anchors resolve inside this repo | PASS |
+| V_03 | Public authority packet matches the 2026-04-19 paused state | PASS |
+| V_04 | Public packet excludes private paths, CAD, and raw runtime access | PASS |
 
 ## Proof Anchors
 
 | Path | State |
 |------|-------|
-| `output/ship/phase4-vessel-closure-current-canonical/final-vessel-spec.json` | VERIFIED |
-| `output/ship/phase4-vessel-closure-current-canonical/commercialization-verdict.md` | VERIFIED |
-| `output/ship/phase4-vessel-closure-current-canonical/augmentation-verdict.json` | VERIFIED |
-| `output/ship/phase13.2-ship-truth-ascent/` | VERIFIED |
-| `output/ship/phase4-vessel-closure-current-canonical/arrangement-physical-integration.json` | VERIFIED |
-| `output/ship/phase4-vessel-closure-current-canonical/lead-hull-basis.json` | VERIFIED |
+| `proofs/manifests/CURRENT_AUTHORITY_PACKET.md` | VERIFIED |
+| `proofs/artifacts/2026-04-19-showcase-refresh/authority_surface.json` | VERIFIED |
+| `proofs/artifacts/2026-04-19-showcase-refresh/open_gaps.md` | VERIFIED |
+| `validation/results/public_surface_status.json` | VERIFIED |
 
 ## Repo Shape
 
-**What is in this public repository:**
-- Vessel concept description and hull specifications
-- Selected computed results and authority metrics
-- Innovation inventory with status labels
-- Known limitations and design gaps
-- Development status and phase tracking
-- Public rights notice and disclaimers
-
-**What is not in this public repository:**
-- Source code, solver integrations, or automation scripts
-- Hull geometry files, CAD, or lines plans
-- OEM or vendor-proprietary data
-- Full class-submission or build package materials
-- Raw CFD results or mesh files
-- Manufacturing drawings or scantling details
-
-## Ecosystem
-
-- [ZeroShip](https://github.com/Zer0pa/ZeroShip) — Design platform architecture showcase
-- [ZPE-IMC](https://github.com/Zer0pa/ZPE-IMC) — Multi-modal integration codec
-- [ZPE-Bio](https://github.com/Zer0pa/ZPE-Bio) — Biosignal domain codec
-- [ZPE-FT](https://github.com/Zer0pa/ZPE-FT) — Financial time-series codec
-- [ZPE-Geo](https://github.com/Zer0pa/ZPE-Geo) — Geospatial codec
-- [ZPE-Robotics](https://github.com/Zer0pa/ZPE-Robotics) — Robotics telemetry codec
-- [ZPE-Neuro](https://github.com/Zer0pa/ZPE-Neuro) — Neuroscience codec
-- [ZPE-IoT](https://github.com/Zer0pa/ZPE-IoT) — IoT sensor codec
-- [ZPE-Ink](https://github.com/Zer0pa/ZPE-Ink) — Structured document codec
-- [ZPE-Mocap](https://github.com/Zer0pa/ZPE-Mocap) — Motion capture codec
-- [ZPE-Prosody](https://github.com/Zer0pa/ZPE-Prosody) — Speech prosody codec
-- [ZPE-XR](https://github.com/Zer0pa/ZPE-XR) — Extended reality codec
+| Field | Value |
+|-------|-------|
+| Proof Anchors | 4 |
+| Public Packet | 2026-04-19 showcase refresh |
+| Sibling Surface | ZeroShip |
+| Authority Source | proofs/manifests/CURRENT_AUTHORITY_PACKET.md |
 
 ## Quick Start
 
 ```bash
-# Showcase repository — no code to run
 git clone https://github.com/Zer0pa/Zero-Class-Vessel-Hull-20098.git
-# Ship concept: VESSEL-CONCEPT.md
-# Hull specs: HULL-20098.md
-# Full spec table: SPEC-SUMMARY.md
-# Innovations: INNOVATION-INVENTORY.md
-# Known gaps: KNOWN-LIMITATIONS.md
-# Platform: https://github.com/Zer0pa/ZeroShip
+cd Zero-Class-Vessel-Hull-20098
+sed -n '1,220p' README.md
+sed -n '1,260p' DEVELOPMENT-STATUS.md
+find proofs -maxdepth 3 -type f | sort
 ```
-
----
-
-> This repository is a public showcase for the concept vessel currently identified as Hull 20098. It may include selected outputs, diagrams, and progress material, but it is not a code release, a build package, or a public manufacturing licence. Except for limited GitHub service-level permissions associated with public repository visibility, no licence is implied by public posting, and all rights are reserved unless expressly granted in writing.
