@@ -7,9 +7,9 @@ currently tracked as Hull 20098. It publishes the current vessel basis, open
 closure gaps, and weekly state changes without publishing private code, CAD,
 raw CFD estates, or partner data.
 
-This surface is useful now for following whether the ship truth moved, stayed
-frozen, or remained blocked. Platform progress is published separately in the
-sibling ZeroShip repo.
+This surface is useful now and improves continuously as the ship truth, truth
+boundary, and closure path become sharper. Platform progress is published
+separately in the sibling ZeroShip repo.
 
 | Field | Value |
 |-------|-------|

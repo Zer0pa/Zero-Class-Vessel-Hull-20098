@@ -11,6 +11,11 @@ is useful now, updates in public, and stays honest about its boundary. It is
 not a dump of private code, a private-path scrapbook, or a narratable proxy
 for work that has not been proved.
 
+It speaks for itself. Do not frame a showcase repo as a module in some grand
+unified portfolio platform unless that is literally the product being
+described. Shared philosophy and sibling references are fine. Fake technical
+unification is not.
+
 ## 2. Minimum Structure
 
 Every showcase repo keeps this shape:
@@ -44,9 +49,22 @@ validation/
 Packaging files are optional and only belong in a showcase repo that also
 ships runnable public software.
 
-## 3. Canonical README Contract
+## 3. Public Posture
 
-The README uses the same parser-sensitive public spine as the wider portfolio:
+Use the same positive posture everywhere:
+
+- useful now, improving continuously
+- specific about what is proved
+- specific about what is still blocked
+
+Do not use apology language such as `incomplete`, `not yet ready`,
+`pre-alpha`, `private-stage`, or similar hedges. If a surface is public, it
+must read as intentionally public.
+
+## 4. Canonical README Contract
+
+The README uses the same parser-sensitive public spine as the shared public
+contract:
 
 1. `## What This Is`
 2. `## Key Metrics`
@@ -69,7 +87,7 @@ Rules:
 - use only `PASS`, `FAIL`, or `INC` in `## Tests and Verification`
 - every proof anchor path must resolve inside the public repo
 
-## 4. Public Proof Doctrine
+## 5. Public Proof Doctrine
 
 - every promoted number must trace to a repo-local file under `proofs/` or
   `validation/`
@@ -78,7 +96,7 @@ Rules:
 - a showcase repo must never cite a directory that does not exist in its own
   git history
 
-## 5. Status Doctrine
+## 6. Status Doctrine
 
 `DEVELOPMENT-STATUS.md` must carry an absolute date and say:
 
@@ -90,15 +108,17 @@ Rules:
 If the underlying workstream is paused, say `controlled pause` or
 `pause and convergence`. Do not frame it as abandonment.
 
-## 6. Language Rules
+## 7. Language Rules
 
 - use positive, buyer-legible language
 - name blockers plainly
 - do not use hidden rescue language or proxy wins
 - do not use hardcoded private paths, private account names, or access details
 - do not let platform progress masquerade as ship progress
+- do not lean on ecosystem theatre, family lists, or portfolio rhetoric when a
+  direct product description is enough
 
-## 7. Validation Minimum
+## 8. Validation Minimum
 
 Each showcase repo keeps one machine-readable result at
 `validation/results/public_surface_status.json` and one current manifest under
@@ -111,7 +131,7 @@ The minimum public checks are:
 - current status packet present
 - no private-path leakage in public proofs
 
-## 8. Pre-Push Checklist
+## 9. Pre-Push Checklist
 
 - README contract passes
 - all proof anchors resolve
