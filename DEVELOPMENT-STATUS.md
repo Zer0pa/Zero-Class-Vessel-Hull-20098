@@ -2,17 +2,18 @@
 
 | Field | Value |
 |-------|-------|
-| Last Updated | 2026-04-19 |
-| Current Position | Ship truth frozen while platform convergence proceeds |
+| Last Updated | 2026-05-03 |
+| Current Position | Ship truth frozen while platform convergence proceeds under Ship Mechanics profile |
 | Current Gate | Authority closure remains open |
 | Phase 14 | Deferred |
 | Sibling Platform Surface | ZeroShip |
 
 ## What Changed This Week
 
-- the public vessel surface was realigned to the controlled pause state
-- the repo now carries repo-local public authority packets instead of private proof paths
-- the vessel public narrative now says plainly that ship truth did not move this week
+- the public vessel surface was migrated to the `Ship Mechanics` Lab Front Door spine
+- the repo now carries a 2026-05-03 public authority packet refresh
+- the vessel public narrative now says plainly that ship truth remains frozen while platform convergence proceeds
+- the sibling split is explicit: ZeroShip carries the platform story; this repo carries the vessel authority story
 
 ## What Did Not Change
 
@@ -21,6 +22,7 @@
 - one-unit-out `23 kn` remains false
 - geometry reopening remains blocked
 - the four-pod branch remains non-sovereign
+- no class approval, yard package, construction release, or Phase 14 closure is claimed
 
 ## Current Public Basis
 
@@ -41,5 +43,6 @@
 ## Next Lawful Move
 
 Keep the ship truth frozen, finish the platform convergence gates in the
-private execution repo, and only reopen one bounded authority lane when the
-next restart path is lawfully admitted.
+private execution repo, reconcile the current readiness boundary, and only
+reopen one bounded authority lane when the next restart path is lawfully
+admitted.

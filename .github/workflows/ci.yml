@@ -20,26 +20,43 @@ jobs:
           headings = [line.strip() for line in text.splitlines() if line.startswith("## ")]
           required = [
               "## What This Is",
+              "## Ship Mechanics",
               "## Key Metrics",
+              "## Repo Identity",
+              "## Readiness",
               "## What We Prove",
               "## What We Don't Claim",
-              "## Commercial Readiness",
-              "## Tests and Verification",
+              "## Verification Status",
               "## Proof Anchors",
               "## Repo Shape",
-              "## Quick Start",
           ]
-          idx = 0
-          for item in required:
-              idx = headings.index(item, idx) + 1
+          assert headings[:10] == required, f"unexpected first-ten headings: {headings[:10]}"
+          commercial_alias = "## Commercial " + "Readiness"
+          tests_alias = "## Tests and " + "Verification"
+          assert commercial_alias not in headings, "stale commercial-readiness alias"
+          assert tests_alias not in headings, "stale tests-and-verification alias"
+          key_metrics = text.split("## Key Metrics", 1)[1].split("## Repo Identity", 1)[0]
+          metric_rows = [line for line in key_metrics.splitlines() if line.startswith("|") and "---" not in line and "Metric" not in line]
+          assert len(metric_rows) == 4, f"expected 4 key metrics, got {len(metric_rows)}"
           status = json.loads((root / "validation/results/public_surface_status.json").read_text())
           assert status["checks"], "missing public validation checks"
+          assert status["zone_02"] == "Ship Mechanics", "wrong zone-02 profile"
           for rel in [
               "proofs/manifests/CURRENT_AUTHORITY_PACKET.md",
-              "proofs/artifacts/2026-04-19-showcase-refresh/authority_surface.json",
-              "proofs/artifacts/2026-04-19-showcase-refresh/open_gaps.md",
+              "proofs/artifacts/2026-05-03-ship-mechanics-refresh/authority_surface.json",
+              "proofs/artifacts/2026-05-03-ship-mechanics-refresh/open_gaps.md",
               "validation/results/public_surface_status.json",
+              "docs/ARCHITECTURE.md",
+              "docs/LEGAL_BOUNDARIES.md",
           ]:
               assert (root / rel).exists(), f"missing proof anchor: {rel}"
-          assert "/Users/" not in text, "private filesystem path leaked into README"
+          private_path_token = "/" + "Users/"
+          for path in root.rglob("*"):
+              if ".git" in path.parts or not path.is_file():
+                  continue
+              try:
+                  content = path.read_text()
+              except UnicodeDecodeError:
+                  continue
+              assert private_path_token not in content, f"private filesystem path leaked: {path}"
           PY

@@ -13,6 +13,14 @@ to closure.
 - one-unit-out `23 kn`: false
 - four-pod `13.518964 MW @ 23 kn`: branch-local only
 - geometry reopening: blocked
+- Phase 14: deferred
+
+## Ship Mechanics Profile
+
+This repo is the `ship_vessel` half of the public Ship Mechanics profile. It
+publishes the current vessel basis, non-claims, and closure blockers without
+publishing private code, CAD, raw CFD estates, runtime access, OEM data, or
+partner data.
 
 ## Relationship To ZeroShip
 

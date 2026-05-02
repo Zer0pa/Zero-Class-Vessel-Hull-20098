@@ -1,26 +1,27 @@
 {
   "repo": "Zero-Class-Vessel-Hull-20098",
-  "checked_at": "2026-04-19",
-  "confidence_percent": 79,
+  "checked_at": "2026-05-03",
+  "profile": "ship_vessel",
+  "zone_02": "Ship Mechanics",
   "checks": [
     {
       "code": "V_01",
-      "name": "README contract matches showcase playbook",
+      "name": "README uses the Ship Mechanics first-ten-zone spine",
       "verdict": "PASS"
     },
     {
       "code": "V_02",
-      "name": "Proof anchors resolve inside repo",
+      "name": "Displayed proof anchors resolve inside repo",
       "verdict": "PASS"
     },
     {
       "code": "V_03",
-      "name": "Public authority packet reflects paused ship-truth state",
+      "name": "Public authority packet preserves frozen ship-truth state without class or construction overclaim",
       "verdict": "PASS"
     },
     {
       "code": "V_04",
-      "name": "Private paths and raw runtime access excluded",
+      "name": "Public packet excludes private paths, CAD, raw CFD, runtime access, OEM data, and partner data",
       "verdict": "PASS"
     }
   ]

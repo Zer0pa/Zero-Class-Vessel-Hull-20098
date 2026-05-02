@@ -1,0 +1,32 @@
+{
+  "repo": "Zero-Class-Vessel-Hull-20098",
+  "updated": "2026-05-03",
+  "profile": "ship_vessel",
+  "zone_02": "Ship Mechanics",
+  "public_position": "ship_truth_frozen_while_platform_convergence_proceeds",
+  "authority_basis": {
+    "power_23kn_mw": 14.359960,
+    "hydrodynamic_anchor_mw": 14.350634,
+    "loaded_displacement_t": 10955.255,
+    "one_unit_out_support_kn": 19.595771
+  },
+  "branch_boundaries": {
+    "four_pod_same_basis_mw": 13.518964,
+    "four_pod_state": "branch_local_non_sovereign",
+    "geometry_reopen": "blocked",
+    "authority_cfd_promotion": false
+  },
+  "public_boundary": {
+    "class_approval_claimed": false,
+    "yard_package_claimed": false,
+    "manufacturing_release_claimed": false,
+    "one_unit_out_23kn_claimed": false,
+    "cad_or_raw_cfd_published": false,
+    "private_code_published": false
+  },
+  "source_basis": [
+    "2026-04-19 public authority packet",
+    "2026-04-25 internal working-state review"
+  ],
+  "readiness_note": "The public vessel surface remains blocked on authority topology/package closure, motion, seakeeping, class-facing closure, and internal readiness reconciliation."
+}

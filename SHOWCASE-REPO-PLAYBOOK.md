@@ -1,6 +1,6 @@
 # Showcase Repo Playbook
 
-**Version:** 2026-04-19
+**Version:** 2026-05-03
 **Scope:** Public-facing showcase repos that publish status, architecture, and
 evidence without publishing private implementation code.
 
@@ -22,7 +22,6 @@ Every showcase repo keeps this shape:
 
 ```text
 README.md
-LICENSE
 CITATION.cff
 CHANGELOG.md
 CONTRIBUTING.md
@@ -67,24 +66,26 @@ The README uses the same parser-sensitive public spine as the shared public
 contract:
 
 1. `## What This Is`
-2. `## Key Metrics`
-3. `## Competitive Benchmarks` when real public benchmark evidence exists
-4. `## What We Prove`
-5. `## What We Don't Claim`
-6. `## Commercial Readiness`
-7. `## Tests and Verification`
-8. `## Proof Anchors`
-9. `## Repo Shape`
-10. `## Quick Start`
+2. `## Ship Mechanics`
+3. `## Key Metrics`
+4. `## Repo Identity`
+5. `## Readiness`
+6. `## What We Prove`
+7. `## What We Don't Claim`
+8. `## Verification Status`
+9. `## Proof Anchors`
+10. `## Repo Shape`
 
 Rules:
 
 - keep the headings in that order
-- add the `Architecture` and `Encoding` key-value rows under `## What This Is`
+- Use `## Ship Mechanics` as Zone 02 for ship showcase surfaces
 - keep `## Key Metrics` to exactly four rows
-- use only `STAGED`, `PASS`, `PARTIAL`, `BLOCKED`, `FAIL`, or `INCONCLUSIVE`
-  in `## Commercial Readiness`
-- use only `PASS`, `FAIL`, or `INC` in `## Tests and Verification`
+- Use canonical readiness vocabulary: `PASS`, `FAIL`, `INCONCLUSIVE`,
+  `UNTESTED`, `BLOCKED`, `SUSPENDED_BY_OWNER`, `PAUSED_EXTERNAL`, `ACTIVE`,
+  or `STAGED`
+- Use only `PASS`, `FAIL`, `INC`, `BLOCKED`, or `UNTESTED` in
+  `## Verification Status`
 - every proof anchor path must resolve inside the public repo
 
 ## 5. Public Proof Doctrine
