@@ -1,0 +1,58 @@
+{
+  "url": "http://127.0.0.1:8767/index.html",
+  "viewport_desktop": [
+    1440,
+    900
+  ],
+  "viewport_mobile": [
+    414,
+    1100
+  ],
+  "console_errors": [],
+  "page_errors": [],
+  "pretext_state": "active",
+  "pretext_state_mobile": "active",
+  "headline_text": "AUTHORITY PACKET, NOT A RELEASE.",
+  "live_lane": "LIVE LANE · 100900Z",
+  "five_metric_cards_present": 5,
+  "five_metric_values": [
+    "14.36MW",
+    "10,955t",
+    "14.35MW",
+    "V_01–V_04",
+    "19.6kn"
+  ],
+  "all_cell_ids": [
+    "00 · HULL 20098",
+    "01 · THE GAP",
+    "03 · VALUE",
+    "04 · INSIGHT",
+    "05.0 · CURRENT TECH",
+    "05.1 · OUR TECH",
+    "06 · MEASUREMENT",
+    "07 · KEY METRICS",
+    "07.1 · POWER @ 23 KN",
+    "07.2 · LOADED DISPL.",
+    "07.3 · HYDRO ANCHOR",
+    "07.4 · FALSIFICATION",
+    "07.5 · ONE-UNIT-OUT",
+    "08 · DETERMINISM",
+    "08.1 · WHAT DETERMINISTIC MEANS",
+    "08.2 · THE FIDELITY GAP",
+    "09 · POSSIBILITY",
+    "09.1 · THIS REPO'S AMBITION",
+    "09.2 · LIVE PROBE",
+    "09.3 · LIVE WORKSTREAM"
+  ],
+  "external_blank_cells": [
+    "01 · THE GAP",
+    "03 · VALUE",
+    "09 · POSSIBILITY",
+    "09.1 · THIS REPO'S AMBITION",
+    "09.2 · LIVE PROBE",
+    "09.3 · LIVE WORKSTREAM"
+  ],
+  "non_live_green_count": 0,
+  "non_live_green_offenders": [],
+  "stale_labels": []
+}
