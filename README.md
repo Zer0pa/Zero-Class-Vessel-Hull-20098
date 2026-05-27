@@ -64,7 +64,7 @@ find proofs -maxdepth 3 -type f | sort
 <table width="100%">
 <tr>
 <td width="50%" valign="top">
-<div><b>03 · VALUE</b></div>
+<div><b>03 · VALUE OF MARKET</b></div>
       <div>$195.2<span>B</span></div>
       <div>The 2030 global shipbuilding market — yet publicly reviewable zero-CO₂ vessel dossiers remain <b>strikingly rare inside it.</b></div>
 </td>

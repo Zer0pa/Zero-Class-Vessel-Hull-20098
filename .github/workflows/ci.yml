@@ -30,14 +30,62 @@ jobs:
               "## Proof Anchors",
               "## Repo Shape",
           ]
-          assert headings[:10] == required, f"unexpected first-ten headings: {headings[:10]}"
+          frontdoor_labels = [
+              "00 · HULL-20098",
+              "01 · THE GAP",
+              "02 · MARKETS",
+              "03 · VALUE OF MARKET",
+              "04 · INSIGHT",
+              "05.1 · CURRENT TECH",
+              "05.2 · OUR TECH",
+              "05.3 · BENCHMARKS",
+              "06 · MEASUREMENT",
+              "06.1 ·",
+              "07 · KEY METRICS",
+              "07.1 ·",
+              "07.2 ·",
+              "07.3 ·",
+              "07.4 ·",
+              "07.5 ·",
+              "08 ·",
+              "08.1 ·",
+              "08.2 ·",
+              "09",
+              "09.1 ·",
+              "09.2 ·",
+              "09.3 ·",
+              "09.4",
+              "09.5",
+              "09.6",
+              "09.7",
+              "09.8",
+          ]
+          forbidden_geometry = [
+              "colspan",
+              '<td width="20%"',
+              '<td width="25',
+              '<td width="41',
+              '<td width="33.33',
+              '<td width="50.0',
+              '<td width="66.67',
+          ]
+          frontdoor = headings[:1] == ["## Install / Developer Commands"]
+          if frontdoor:
+              missing = [label for label in frontdoor_labels if label not in text]
+              assert not missing, f"missing front-door labels: {missing}"
+              forbidden = [token for token in forbidden_geometry if token in text]
+              assert not forbidden, f"front-door geometry regressed: {forbidden}"
+              assert "docs/assets/product-page-mechanics.gif" in text, "mechanics image missing"
+          else:
+              assert headings[:10] == required, f"unexpected first-ten headings: {headings[:10]}"
           commercial_alias = "## Commercial " + "Readiness"
           tests_alias = "## Tests and " + "Verification"
           assert commercial_alias not in headings, "stale commercial-readiness alias"
           assert tests_alias not in headings, "stale tests-and-verification alias"
-          key_metrics = text.split("## Key Metrics", 1)[1].split("## Repo Identity", 1)[0]
-          metric_rows = [line for line in key_metrics.splitlines() if line.startswith("|") and "---" not in line and "Metric" not in line]
-          assert len(metric_rows) == 4, f"expected 4 key metrics, got {len(metric_rows)}"
+          if not frontdoor:
+              key_metrics = text.split("## Key Metrics", 1)[1].split("## Repo Identity", 1)[0]
+              metric_rows = [line for line in key_metrics.splitlines() if line.startswith("|") and "---" not in line and "Metric" not in line]
+              assert len(metric_rows) == 4, f"expected 4 key metrics, got {len(metric_rows)}"
           status = json.loads((root / "validation/results/public_surface_status.json").read_text())
           assert status["checks"], "missing public validation checks"
           assert status["zone_02"] == "Ship Mechanics", "wrong zone-02 profile"
