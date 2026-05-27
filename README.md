@@ -2,6 +2,13 @@
 
 ## Install / Developer Commands
 
+<!-- INSTALL-DX:START -->
+#### Package Boundary
+
+Design dossier only: no public Python package, PyPI distribution, simulation tool, or CLI is claimed.
+Use the repo-local source, dossier, or proof commands below; do not substitute an unrelated PyPI package.
+<!-- INSTALL-DX:END -->
+
 #### Quick Start
 
 ```bash
