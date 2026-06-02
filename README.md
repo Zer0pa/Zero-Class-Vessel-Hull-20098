@@ -13,7 +13,7 @@ For full install, smoke, source, and developer commands, [click here](#install-d
 <tr>
 <td width="100%" valign="top">
 <div><span><b>00 · HULL-20098</b> · VESSEL DOSSIER</span> <span>RESEARCH-READY · DOSSIER ONLY</span></div>
-      <h1>A 10,000-tonne <span>zero-CO₂ freighter</span> under review.</h1>
+      <h1>A 10,955-Tonne Hydrogen-Electric <span>Freighter Concept Under Review</span></h1>
       <p>Public review dossier for a hydrogen-electric freighter — checked numbers, named limits &middot; Hull 20098 &middot; github.com/Zer0pa/Zero-Class-Vessel-Hull-20098</p>
       <p>Shipping moves roughly 80% of world trade and burns the dirtiest fuel afloat. Hull 20098 is a public design dossier for a <strong>10,955-tonne</strong> hydrogen-electric freighter, sized for a <strong>23 kn</strong> two-unit design speed and <strong>19.6 kn</strong> one-unit-out. Power, displacement, and propulsion anchors arrive checked — <strong>14.36 MW</strong> installed, <strong>14.35 MW</strong> hydrodynamic — so reviewers see a concrete concept with named limits, not a render with private numbers behind it.</p>
 </td>
